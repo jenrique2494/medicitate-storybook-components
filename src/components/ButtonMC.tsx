@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import { themeTeal } from "../themes/themeTeal";
 import { themeTealDark } from '../themes/themeTealDark';
 
-export interface MyLabelProps{
+export interface MyButtonProps{
     /**
      * El nombre del boton que vas a usar
     */
@@ -11,7 +11,7 @@ export interface MyLabelProps{
     /**
      * El tamaño que vas a usar en el boton
     */
-    size:'small' | 'medium' | 'large';
+    size?:'small' | 'medium' | 'large';
     /**
      * El color del label
     */
@@ -38,7 +38,7 @@ export const ButtonMC =  ({
     variant='contained',
     fontColor,
     backgroundColor=''
-    }:MyLabelProps) => {
+    }:MyButtonProps) => {
     return (
         <ThemeProvider theme={themeTeal} >
             <Button variant={variant} size={size} color={color} style={{color:fontColor,backgroundColor}} >

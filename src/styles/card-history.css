@@ -1,0 +1,8 @@
+.card-history {
+    display:flex;
+    justify-content: space-between;
+}
+.icon-button-extralarge{
+    width:60;
+    height:60;
+}
