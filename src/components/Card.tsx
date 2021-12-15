@@ -2,7 +2,7 @@ import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, make
 import { themeTeal } from "../themes/themeTeal";
 
 
-export default function CustomCard({
+export function CustomCard({
   title="",
   altText="",
   summary="",
@@ -37,3 +37,4 @@ export default function CustomCard({
     </ThemeProvider>
   );
 }
+export default CustomCard;
