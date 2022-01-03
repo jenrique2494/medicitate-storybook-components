@@ -187,6 +187,7 @@ export const  NavBar=({
                   </Box>
               </Toolbar>
             </AppBar>
+            <Toolbar />
         </Box>                
     </ThemeProvider>
   );
