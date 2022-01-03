@@ -13,3 +13,5 @@ export const themeTeal = createTheme({
         },
     },
 });
+
+export default themeTeal;

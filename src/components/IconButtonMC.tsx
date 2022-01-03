@@ -1,6 +1,6 @@
 
 import { IconButton, ThemeProvider } from '@mui/material';
-import { themeTeal } from '../themes/themeTeal';
+import  themeTeal  from '../themes/themeTeal';
 
 
 

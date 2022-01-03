@@ -1,8 +1,8 @@
 import { Button } from '@mui/material';
 import { ThemeProvider } from '@mui/material/styles';
-import { themeTeal } from "../themes/themeTeal";
-import { themeTealDark } from '../themes/themeTealDark';
-
+import themeTeal from "../themes/themeTeal";
+import themeTealDark from '../themes/themeTealDark';
+import '../styles/general.css'
 export interface MyButtonProps{
     /**
      * El nombre del boton que vas a usar

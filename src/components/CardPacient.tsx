@@ -2,24 +2,33 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActionArea, CardActions, IconButton, ThemeProvider } from '@mui/material';
+import { Avatar,  CardActionArea, CardActions, CardHeader, IconButton, ThemeProvider } from '@mui/material';
 import { themeTeal } from '../themes/themeTeal';
-import DeleteIcon from '@mui/icons-material/Delete';
-import EditIcon from '@mui/icons-material/Edit';
-import HistoryIcon from '@mui/icons-material/History';
 import { themeTealDark } from '../themes/themeTealDark';
 
-import '../styles/card-history.css';
+import { MoreVert } from '@mui/icons-material';
+import { teal } from '@mui/material/colors';
+import avatarNoContent from "../assets/avatarNoContent.svg"
 
-export interface MyCardHistoryProps{
+import '../styles/general.css'
+
+export interface MyCardPacientProps{
+    /**
+     * El nombre del Paciente
+    */
+    name:string;
+    /**
+     * El fecha en que se creo la ultima historia
+    */
+    date?:string;
+    /**
+     * El src de la imagen
+    */
+    imageSrc?:string;
     /**
      * El titulo de la historia
     */
     title:string;
-    /**
-     * El titulo en que se creo la historia
-    */
-    date?:string;
     /**
      * Breve Descripcion de la historia
     */
@@ -31,7 +40,7 @@ export interface MyCardHistoryProps{
     /**
      * Estado de la historia
     */
-    state?:'En Proceso' | 'Finalizada'
+    state?:'En Proceso' | 'Finalizado'
     /**
      * modo oscuro
     */
@@ -47,20 +56,41 @@ export interface MyCardHistoryProps{
 
 }
 
-export const CardHistory=({
-    title='',
+export const CardPacient=({
+    name='',
     date='medium',
+    imageSrc,
+    title='',
     description='primary',
     variant,
     fontColor,
     backgroundColor='',
     darkMode=false,
     state,
-    }:MyCardHistoryProps) => {
+    }:MyCardPacientProps) => {
     return (
         <ThemeProvider theme={(!darkMode)?themeTeal:themeTealDark} >
-            <Card className="card-history" variant={variant} sx={{ maxWidth: 345,color:fontColor,backgroundColor }} >
+            <Card className="card-pacient" variant={variant} sx={{ maxWidth: 345,color:fontColor,backgroundColor }} >
+                <CardHeader
+                    avatar={
+                    <Avatar sx={{ bgcolor: teal[500] }} aria-label="recipe">
+                        {name.substring(0,1)}
+                    </Avatar>
+                    }
+                    action={
+                    <IconButton aria-label="settings">
+                        <MoreVert />
+                    </IconButton>
+                    }
+                    title={name}
+                    subheader={date}
+                />
                 <CardActionArea>
+                <CardMedia
+                    component="img"
+                    image={(imageSrc)?imageSrc:avatarNoContent}
+                    alt="green iguana"
+                />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="div">
                             {title}
@@ -68,7 +98,7 @@ export const CardHistory=({
                         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                             {date}
                         </Typography>
-                        {state && <Typography color={(state==='Finalizada')?"#2e7d32":"#ed6c02"} >
+                        {state && <Typography color={(state==='Finalizado')?"#2e7d32":"#ed6c02"} >
                             {state}
                         </Typography>}
                         <Typography variant="body2">
@@ -76,19 +106,8 @@ export const CardHistory=({
                         </Typography>
                     </CardContent>
                 </CardActionArea>
-                <CardActions style={{display:'flex',flexDirection:'column'}}>
-                    <IconButton size="large" className='icon-button-extralarge'>
-                        <HistoryIcon sx={{ fontSize: 50 }} />
-                    </IconButton>
-                    <IconButton aria-label="edit">
-                        <EditIcon />
-                    </IconButton>
-                    <IconButton aria-label="delete">
-                        <DeleteIcon />
-                    </IconButton>
-                </CardActions>
             </Card>
         </ThemeProvider>
   );
 }
-export default CardHistory;
+export default CardPacient;

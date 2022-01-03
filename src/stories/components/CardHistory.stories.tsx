@@ -21,6 +21,7 @@ Default.args = {
   title: "Historia Medica",
   date:"15/12/2021",
   description: "Vino por un chequeo anual",
+  state:'En Proceso'
 };
 
 export const Outlined = Template.bind({});
@@ -29,7 +30,8 @@ Outlined.args = {
   title: "Historia Medica",
   date:"15/12/2021",
   description: "Vino por un chequeo anual",
-  variant:"outlined"
+  variant:"outlined",
+  state:'En Proceso'
 };
 
 export const Elevation = Template.bind({});
@@ -38,7 +40,8 @@ Elevation.args = {
   title: "Historia Medica",
   date:"15/12/2021",
   description: "Vino por un chequeo anual",
-  variant:'elevation'
+  variant:'elevation',
+  state:'Finalizada'
 };
 
 export const DarkMode = Template.bind({});
@@ -48,5 +51,6 @@ DarkMode.args = {
   date:"15/12/2021",
   description: "Vino por un chequeo anual",
   variant:'elevation',
+  state:'En Proceso',
   darkMode:true,
 };
