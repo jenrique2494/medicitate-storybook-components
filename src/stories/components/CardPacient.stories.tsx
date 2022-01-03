@@ -22,7 +22,8 @@ Default.args = {
     date:"15/12/2021",
     title: "Neumonia Leve",
     description: "Vino por un chequeo anual",
-    state:'En Proceso'
+    state:'En Proceso',
+    avatarNoContent:'../assets/avatarNoContent.svg'
 };
 
 export const Outlined = Template.bind({});
@@ -33,7 +34,8 @@ Outlined.args = {
     title: "Neumonia Leve",
     description: "Vino por un chequeo anual",
     variant:"outlined",
-    state:'En Proceso'
+    state:'En Proceso',
+    avatarNoContent:'../assets/avatarNoContent.svg'
 };
 
 export const Elevation = Template.bind({});
@@ -44,7 +46,8 @@ Elevation.args = {
     title: "Neumonia Leve",
     description: "Vino por un chequeo anual",
     variant:'elevation',
-    state:'Finalizado'
+    state:'Finalizado',
+    avatarNoContent:'../assets/avatarNoContent.svg'
 };
 
 export const DarkMode = Template.bind({});
@@ -57,4 +60,5 @@ DarkMode.args = {
     variant:'elevation',
     state:'En Proceso',
     darkMode:true,
+    avatarNoContent:'../assets/avatarNoContent.svg'
 };

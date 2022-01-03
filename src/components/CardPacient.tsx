@@ -8,7 +8,6 @@ import { themeTealDark } from '../themes/themeTealDark';
 
 import { MoreVert } from '@mui/icons-material';
 import { teal } from '@mui/material/colors';
-import avatarNoContent from "../assets/avatarNoContent.svg"
 
 import '../styles/general.css'
 
@@ -25,6 +24,10 @@ export interface MyCardPacientProps{
      * El src de la imagen
     */
     imageSrc?:string;
+    /**
+     * El src de la imagen no content
+    */
+    avatarNoContent:string;
     /**
      * El titulo de la historia
     */
@@ -60,6 +63,7 @@ export const CardPacient=({
     name='',
     date='medium',
     imageSrc,
+    avatarNoContent,
     title='',
     description='primary',
     variant,
